@@ -69,6 +69,34 @@
       transform: scale(1.07);
     }
 
+    .footer {
+      background-color: #f1ead1;
+      text-align: center;
+      padding: 30px 20px 40px;
+      font-size: 16px;
+      color: #000;
+      margin-top: auto;
+    }
+
+    .footer strong {
+      font-weight: bold;
+    }
+
+    .social-icons {
+      margin-top: 10px;
+    }
+
+    .social-icons a {
+      text-decoration: none;
+      margin: 0 10px;
+      display: inline-block;
+    }
+
+    .social-icons img {
+      width: 28px;
+      height: 28px;
+    }
+
     @media (max-width: 600px) {
       h1 {
         font-size: 40px;
@@ -83,6 +111,13 @@
         font-size: 24px;
         padding: 18px 30px;
         min-width: 160px;
+      }
+      .footer {
+        font-size: 14px;
+      }
+      .social-icons img {
+        width: 24px;
+        height: 24px;
       }
     }
   </style>
@@ -102,6 +137,21 @@
     <a href="friday.html"><button class="day-btn">Friday</button></a>
     <a href="saturday.html"><button class="day-btn">Saturday</button></a>
     <a href="sunday.html"><button class="day-btn">Sunday</button></a>
+  </div>
+
+  <div class="footer">
+    <p><strong>This website is created and managed by Ashish Tiwari</strong></p>
+    <p>All rights reserved © 2025</p>
+    <p><strong>This website is dedicated to the students of Jaypee University, Solan, Himachal Pradesh</strong></p>
+    <p>If you face any bugs or glitches, report at:</p>
+    <div class="social-icons">
+      <a href="https://github.com/Ashish150523" target="_blank">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/github.svg" alt="GitHub">
+      </a>
+      <a href="https://www.linkedin.com/in/ashish-tiwari-69177731a/" target="_blank">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/linkedin.svg" alt="LinkedIn">
+      </a>
+    </div>
   </div>
 
   <script>
@@ -133,9 +183,7 @@
       timeElement.textContent = indianTime;
     }
 
-    // Initial call
     updateDateTime();
-    // Update every second
     setInterval(updateDateTime, 1000);
   </script>
 
