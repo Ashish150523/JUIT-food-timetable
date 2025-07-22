@@ -3,121 +3,158 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Weekly Buttons</title>
+  <title>JUIT Food Timetable</title>
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
-      background-color: #f1ead1;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100vh;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: url("Screenshot 2025-07-21 093650.png") no-repeat center center fixed;
+      background-size: cover;
+      color: #006400;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
+      justify-content: space-between;
       position: relative;
     }
 
-    h1 {
-      font-size: 64px;
+    .overlay {
+      background-color: rgba(255, 255, 255, 0);
+      padding: 30px 20px;
+      border-radius: 30px;
+      width: 90%;
+      max-width: 90%;
+      margin: 30px auto 0 auto;
+      text-align: center;
       color: #006400;
-      margin-top: 60px;
-      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 10vw;
+      font-weight: bold;
+      line-height: 1.2;
+      text-shadow: 1px 1px 2px #f1ead1;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    h1:hover {
+      color: #228B22;
+      transform: scale(1.05);
+    }
+
+    .subtitle {
+      font-size: 6vw;
+      font-family: 'Brush Script MT', cursive;
+      margin-top: 10px;
+      text-shadow: 1px 1px 2px #f1ead1;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .subtitle:hover {
+      color: #2e8b57;
+      transform: scale(1.05);
     }
 
     #date-display {
-      font-size: 28px;
+      font-size: 4vw;
+      margin-top: 10px;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-weight: 600;
       color: #006400;
-      margin-bottom: 40px;
+      text-shadow: 1px 1px 1px #f1ead1;
     }
 
     #time-display {
       position: absolute;
       top: 20px;
       right: 20px;
-      font-size: 24px;
+      font-size: 20px;
       color: #006400;
+      font-weight: bold;
+      background-color: rgba(241, 234, 209, 0.5);
+      padding: 6px 12px;
+      border-radius: 12px;
     }
 
-    .week-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      padding: 0 20px 60px;
-    }
-
-    .week-buttons a {
-      text-decoration: none;
-    }
-
-    .day-btn {
+    .show-timetable-btn {
+      position: fixed;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
       background-color: #006400;
       color: white;
+      font-size: 20px;
+      padding: 14px 24px;
       border: none;
-      padding: 24px 40px;
-      font-size: 32px;
-      border-radius: 20px;
+      border-radius: 25px;
       cursor: pointer;
-      transition: all 0.3s ease;
-      min-width: 200px;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      z-index: 10;
     }
 
-    .day-btn:hover {
+    .show-timetable-btn:hover {
       background-color: #004d00;
-      transform: scale(1.07);
+      transform: translateY(-50%) scale(1.05);
     }
 
-    .footer {
-      background-color: #f1ead1;
+    footer {
+      background-color: rgba(241, 234, 209, 0.8);
+      padding: 20px;
       text-align: center;
-      padding: 30px 20px 40px;
-      font-size: 16px;
-      color: #000;
-      margin-top: auto;
-    }
-
-    .footer strong {
       font-weight: bold;
+      color: #333;
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
     }
 
-    .social-icons {
+    footer img {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+
+    .contact-icons {
+      display: flex;
+      align-items: center;
+      gap: 12px;
       margin-top: 10px;
     }
 
-    .social-icons a {
-      text-decoration: none;
-      margin: 0 10px;
-      display: inline-block;
-    }
-
-    .social-icons img {
-      width: 28px;
-      height: 28px;
-    }
-
-    @media (max-width: 600px) {
+    @media (min-width: 768px) {
       h1 {
-        font-size: 40px;
+        font-size: 60px;
       }
+
+      .subtitle {
+        font-size: 30px;
+      }
+
       #date-display {
         font-size: 20px;
       }
-      #time-display {
-        font-size: 18px;
+
+      .overlay {
+        padding: 60px 80px;
+        max-width: 600px;
       }
-      .day-btn {
+
+      .show-timetable-btn {
         font-size: 24px;
-        padding: 18px 30px;
-        min-width: 160px;
+        padding: 14px 28px;
+        right: 40px;
       }
-      .footer {
-        font-size: 14px;
-      }
-      .social-icons img {
-        width: 24px;
-        height: 24px;
+
+      footer {
+        font-size: 16px;
       }
     }
   </style>
@@ -126,33 +163,30 @@
 
   <div id="time-display"></div>
 
-  <h1>Select a Day</h1>
-  <div id="date-display"></div>
-
-  <div class="week-buttons">
-    <a href="monday.html"><button class="day-btn">Monday</button></a>
-    <a href="tuesday.html"><button class="day-btn">Tuesday</button></a>
-    <a href="wednesday.html"><button class="day-btn">Wednesday</button></a>
-    <a href="thursday.html"><button class="day-btn">Thursday</button></a>
-    <a href="friday.html"><button class="day-btn">Friday</button></a>
-    <a href="saturday.html"><button class="day-btn">Saturday</button></a>
-    <a href="sunday.html"><button class="day-btn">Sunday</button></a>
+  <div class="overlay">
+    <h1>JUIT FOOD<br>TIMETABLE</h1>
+    <div class="subtitle">Annapurna</div>
+    <div id="date-display"></div>
   </div>
 
-  <div class="footer">
-    <p><strong>This website is created and managed by Ashish Tiwari</strong></p>
-    <p>All rights reserved © 2025</p>
-    <p><strong>This website is dedicated to the students of Jaypee University, Solan, Himachal Pradesh</strong></p>
-    <p>If you face any bugs or glitches, report at:</p>
-    <div class="social-icons">
+  <a href="days.html">
+    <button class="show-timetable-btn">Show Time Table</button>
+  </a>
+
+  <footer>
+    <div>This website is created and managed by <strong>Ashish Tiwari</strong></div>
+    <div>All rights reserved © 2025</div>
+    <div>This website is dedicated to the students of Jaypee University, Solan, Himachal Pradesh</div>
+    <div>If you face any bugs or glitches, report at:</div>
+    <div class="contact-icons">
       <a href="https://github.com/Ashish150523" target="_blank">
-        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/github.svg" alt="GitHub">
+        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
       </a>
       <a href="https://www.linkedin.com/in/ashish-tiwari-69177731a/" target="_blank">
-        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/linkedin.svg" alt="LinkedIn">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
       </a>
     </div>
-  </div>
+  </footer>
 
   <script>
     function updateDateTime() {
