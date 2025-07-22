@@ -1,24 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JUIT FOOD TIMETABLE</title>
-</head>
-<body>
-<!DOCTYPE html>
-<html lang="en">
-<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>JUIT Food Timetable</title>
-
-<a href="days.html"> <!-- Replace with your link -->
-    <button class="arrow-btn">→</button>
-  </a>
-
-
-  
   <style>
     * {
       margin: 0;
@@ -28,11 +13,12 @@
 
     body, html {
       height: 100%;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      overflow: hidden;
     }
 
     .background {
-      background: url("Screenshot 2025-07-21 093650.png") no-repeat center center;
+      background: url("Screenshot 2025-07-21 093650.png") no-repeat center center fixed;
       background-size: cover;
       height: 100vh;
       width: 100%;
@@ -44,54 +30,69 @@
       color: #006400;
     }
 
-.overlay {
-  background-color:#f1ead1;
-  padding: 60px 80px;           /* Increased padding for width and height */
-  border-radius: 30px;          /* Slightly rounder corners */
-  transform: translateY(-270px); /* Moves it slightly upward */
-  max-width: 200%;               /* Responsive width */
-  box-shadow: 0 8px 20px #f1ead1;
-}
-
-
-
+    .overlay {
+      background-color: #f1ead1;
+      padding: 40px 30px;
+      border-radius: 30px;
+      max-width: 90%;
+      width: 90%;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
 
     h1 {
-      font-size: 60px;
+      font-size: 10vw;
       font-weight: bold;
       line-height: 1.2;
     }
 
     .subtitle {
-      font-size: 30px;
+      font-size: 6vw;
       font-family: 'Brush Script MT', cursive;
       margin-top: 10px;
     }
+
     .arrow-btn {
-  position: absolute;
-  right: 40px;
-  bottom: 40px;
-  background-color: #006400;
-  color: white;
-  font-size: 28px;
-  padding: 14px 20px;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  z-index: 10;
-}
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background-color: #006400;
+      color: white;
+      font-size: 24px;
+      padding: 14px 18px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      z-index: 10;
+    }
 
-.arrow-btn:hover {
-  background-color: #004d00;
-  transform: translateX(5px);
-}
+    .arrow-btn:hover {
+      background-color: #004d00;
+      transform: translateX(5px);
+    }
 
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 60px;
+      }
 
+      .subtitle {
+        font-size: 30px;
+      }
 
+      .overlay {
+        padding: 60px 80px;
+        max-width: 600px;
+      }
 
-
+      .arrow-btn {
+        font-size: 28px;
+        padding: 14px 20px;
+        right: 40px;
+        bottom: 40px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -101,18 +102,10 @@
       <h1>JUIT FOOD<br>TIMETABLE</h1>
       <div class="subtitle">Annapurna</div>
     </div>
+    <a href="days.html">
+      <button class="arrow-btn">→</button>
+    </a>
   </div>
 
-</body>
-</html>
-
-  
-
- 
-
-</body>
-</html>
-
-    
 </body>
 </html>
