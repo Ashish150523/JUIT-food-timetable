@@ -12,22 +12,14 @@
     }
 
     body, html {
-      height: 100vw;
+      height: 100vh;
       font-family: 'Segoe UI', Arial, sans-serif;
-      overflow: hidden;
-    }
-
-    .background {
       background: url("Screenshot 2025-07-21 093650.png") no-repeat center center fixed;
       background-size: cover;
-      height: 100vh;
-      width: 100%;
+      color: #006400;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
-      color: #006400;
-      padding-top: 40px; /* Moves content to top */
+      justify-content: space-between;
     }
 
     .overlay {
@@ -37,6 +29,8 @@
       width: 90%;
       max-width: 90%;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      margin: 30px auto 0 auto;
+      text-align: center;
     }
 
     h1 {
@@ -72,6 +66,25 @@
       transform: translateX(5px);
     }
 
+    footer {
+      background-color: #f1ead1;
+      padding: 20px;
+      text-align: center;
+      font-weight: bold;
+      color: #333;
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    footer img {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+
     @media (min-width: 768px) {
       h1 {
         font-size: 60px;
@@ -92,20 +105,33 @@
         right: 40px;
         bottom: 40px;
       }
+
+      footer {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="background">
-    <div class="overlay">
-      <h1>JUIT FOOD<br>TIMETABLE</h1>
-      <div class="subtitle">Annapurna</div>
-    </div>
-    <a href="days.html">
-      <button class="arrow-btn">→</button>
-    </a>
+  <div class="overlay">
+    <h1>JUIT FOOD<br>TIMETABLE</h1>
+    <div class="subtitle">Annapurna</div>
   </div>
+
+  <a href="days.html">
+    <button class="arrow-btn">→</button>
+  </a>
+
+  <footer>
+    <div>This website is created and managed by <strong>Ashish Tiwari</strong></div>
+    <div>All rights reserved © 2025</div>
+    <div>This website is dedicated to the students of Jaypee University, Solan, Himachal Pradesh</div>
+    <div>If you face any bugs or glitches, report at:</div>
+    <a href="https://github.com/Ashish150523" target="_blank">
+      <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
+    </a>
+  </footer>
 
 </body>
 </html>
