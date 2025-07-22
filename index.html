@@ -23,6 +23,19 @@
       position: relative;
     }
 
+    .juit-logo {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 1000;
+    }
+
+    .juit-logo img {
+      width: 50px;
+      height: auto;
+      border-radius: 8px;
+    }
+
     .overlay {
       background-color: rgba(255, 255, 255, 0);
       padding: 30px 20px;
@@ -141,10 +154,21 @@
       footer {
         font-size: 16px;
       }
+
+      .juit-logo img {
+        width: 60px;
+      }
     }
   </style>
 </head>
 <body>
+
+  <!-- Logo in top-left -->
+  <div class="juit-logo">
+    <a href="https://www.juit.ac.in/hss_workshop/University.php" target="_blank">
+      <img src="https://www.juit.ac.in/assets/images/juit_logo.png" alt="JUIT Logo" />
+    </a>
+  </div>
 
   <div class="overlay">
     <h1>JUIT FOOD<br>TIMETABLE</h1>
@@ -172,22 +196,19 @@
   </footer>
 
   <script>
-    function updateDate() {
-      const dateElement = document.getElementById("date-display");
-      const now = new Date();
-      const options = {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        timeZone: 'Asia/Kolkata'
-      };
-      const indianDate = new Intl.DateTimeFormat('en-IN', options).format(now);
-      dateElement.textContent = indianDate;
-    }
-
-    updateDate();
+    const dateElement = document.getElementById("date-display");
+    const now = new Date();
+    const options = {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      timeZone: 'Asia/Kolkata'
+    };
+    const indianDate = new Intl.DateTimeFormat('en-IN', options).format(now);
+    dateElement.textContent = indianDate;
   </script>
 
 </body>
 </html>
+
