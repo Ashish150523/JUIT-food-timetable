@@ -16,93 +16,103 @@
       font-family: 'Baloo 2', cursive;
       background-color: #f1ead1;
       color: #004d00;
-      padding: 30px;
+      padding: 30px 15px;
     }
 
     h1 {
       text-align: center;
-      font-size: 40px;
-      margin-bottom: 30px;
+      font-size: 36px;
+      margin-bottom: 40px;
       color: darkgreen;
     }
 
-    .menu-box {
+    .meal-box {
       background-color: #fff9eb;
-      padding: 40px;
-      border-radius: 16px;
+      padding: 30px;
+      border-radius: 20px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .meal-section {
       margin-bottom: 30px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    h2 {
+    .meal-box h2 {
       font-size: 28px;
-      color: darkgreen;
-      margin-bottom: 10px;
+      color: #006400;
+      margin-bottom: 15px;
     }
 
-    ul {
+    .meal-box ul {
       list-style-type: disc;
       padding-left: 25px;
     }
 
-    li {
+    .meal-box li {
       font-size: 20px;
       margin-bottom: 8px;
       font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 30px;
+      }
+
+      .meal-box h2 {
+        font-size: 24px;
+      }
+
+      .meal-box li {
+        font-size: 18px;
+      }
     }
   </style>
 </head>
 <body>
   <h1>Thursday Menu</h1>
 
-  <div class="menu-box">
-    <div class="meal-section">
-      <h2>Breakfast</h2>
-      <ul>
-        <li>Idli</li>
-        <li>Sambhar</li>
-        <li>Vada</li>
-        <li>Upma</li>
-        <li>Coconut Chutney</li>
-        <li>Sprouts</li>
-        <li>Bread</li>
-        <li>Butter</li>
-        <li>Jam</li>
-        <li>Tea</li>
-        <li>Banana</li>
-      </ul>
-    </div>
+  <div class="meal-box">
+    <h2>Breakfast</h2>
+    <ul>
+      <li>Idli</li>
+      <li>Sambhar</li>
+      <li>Vada</li>
+      <li>Upma</li>
+      <li>Coconut Chutney</li>
+      <li>Sprouts</li>
+      <li>Bread</li>
+      <li>Butter</li>
+      <li>Jam</li>
+      <li>Tea</li>
+      <li>Banana</li>
+    </ul>
+  </div>
 
-    <div class="meal-section">
-      <h2>Lunch</h2>
-      <ul>
-        <li>Pasta / Arhar Dal</li>
-        <li>Kachri Pakodi</li>
-        <li>Tandoori Roti & Plain Chapati</li>
-        <li>Rice</li>
-        <li>Salad</li>
-        <li>Papad</li>
-      </ul>
-    </div>
+  <div class="meal-box">
+    <h2>Lunch</h2>
+    <ul>
+      <li>Pasta / Arhar Dal</li>
+      <li>Kachri Pakodi</li>
+      <li>Tandoori Roti & Plain Chapati</li>
+      <li>Rice</li>
+      <li>Salad</li>
+      <li>Papad</li>
+    </ul>
+  </div>
 
-    <div class="meal-section">
-      <h2>Dinner</h2>
-      <ul>
-        <li>Dal Arhar</li>
-        <li>Malai Kofta</li>
-        <li>Tandoori Roti & Plain Chapati</li>
-        <li>Matar Pulao</li>
-        <li>Salad</li>
-        <li>Green Chutney</li>
-        <li>Sweet Dish - Fruit Custard</li>
-        <li>Hot & Cold Milk</li>
-      </ul>
-    </div>
+  <div class="meal-box">
+    <h2>Dinner</h2>
+    <ul>
+      <li>Dal Arhar</li>
+      <li>Malai Kofta</li>
+      <li>Tandoori Roti & Plain Chapati</li>
+      <li>Matar Pulao</li>
+      <li>Salad</li>
+      <li>Green Chutney</li>
+      <li>Sweet Dish - Fruit Custard</li>
+      <li>Hot & Cold Milk</li>
+    </ul>
   </div>
 </body>
 </html>
