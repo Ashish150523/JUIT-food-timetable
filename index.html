@@ -5,18 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>JUIT Food Timetable</title>
   <style>
-    :root {
-      --bg: white;
-      --text: #006400;
-      --card: rgba(255, 255, 255, 0.95);
-    }
-
-    .dark-theme {
-      --bg: #000;
-      --text: white;
-      --card: #222;
-    }
-
     * {
       margin: 0;
       padding: 0;
@@ -26,67 +14,89 @@
     body, html {
       height: 100vh;
       font-family: 'Segoe UI', Arial, sans-serif;
-      background-color: var(--bg);
       background: url("Screenshot 2025-07-21 093650.png") no-repeat center center fixed;
       background-size: cover;
-      color: var(--text);
+      color: #006400;
       display: flex;
       flex-direction: column;
-    }
-
-    header {
-      display: flex;
       justify-content: space-between;
-      align-items: center;
-      background-color: #000;
-      color: white;
-      padding: 10px 20px;
-      font-weight: bold;
-    }
-
-    header .center {
-      color: gray;
-      font-size: 20px;
-    }
-
-    header .right img {
-      width: 22px;
-      height: 22px;
-      margin-left: 15px;
-      cursor: pointer;
+      position: relative;
     }
 
     .overlay {
-      background-color: var(--card);
+      background-color: rgba(255, 255, 255, 0);
       padding: 30px 20px;
       border-radius: 30px;
       width: 90%;
       max-width: 90%;
-      margin: 30px auto;
-      color: var(--text);
+      margin: 30px auto 0 auto;
+      text-align: center;
+      color: #006400;
     }
 
-    .meal-box {
-      border: 2px solid var(--text);
-      border-radius: 20px;
-      padding: 20px;
-      margin: 20px 0;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    h1 {
+      font-size: 10vw;
+      font-weight: bold;
+      line-height: 1.2;
+      text-shadow: 1px 1px 2px #f1ead1;
+      transition: color 0.3s ease, transform 0.3s ease;
     }
 
-    .meal-box h2 {
+    h1:hover {
+      color: #228B22;
+      transform: scale(1.05);
+    }
+
+    .subtitle {
       font-size: 6vw;
-      margin-bottom: 15px;
-      text-align: center;
-      border-bottom: 2px solid var(--text);
-      padding-bottom: 5px;
+      font-family: 'Brush Script MT', cursive;
+      margin-top: 10px;
+      text-shadow: 1px 1px 2px #f1ead1;
+      transition: color 0.3s ease, transform 0.3s ease;
     }
 
-    .meal-box ul {
+    .subtitle:hover {
+      color: #2e8b57;
+      transform: scale(1.05);
+    }
+
+    #date-display {
       font-size: 4vw;
-      list-style: none;
-      padding-left: 10px;
-      text-align: center;
+      margin-top: 10px;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-weight: 600;
+      color: #006400;
+      text-shadow: 1px 1px 1px #f1ead1;
+    }
+
+    #time-display {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 20px;
+      color: #006400;
+      font-weight: bold;
+      background-color: rgba(241, 234, 209, 0.5);
+      padding: 6px 12px;
+      border-radius: 12px;
+    }
+
+    .show-timetable-btn {
+      margin-top: 20px;
+      background-color: #006400;
+      color: white;
+      font-size: 20px;
+      padding: 14px 24px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .show-timetable-btn:hover {
+      background-color: #004d00;
+      transform: scale(1.05);
     }
 
     footer {
@@ -116,56 +126,46 @@
     }
 
     @media (min-width: 768px) {
-      .meal-box h2 {
-        font-size: 28px;
+      h1 {
+        font-size: 60px;
       }
 
-      .meal-box ul {
+      .subtitle {
+        font-size: 30px;
+      }
+
+      #date-display {
         font-size: 20px;
+      }
+
+      .overlay {
+        padding: 60px 80px;
+        max-width: 600px;
+      }
+
+      .show-timetable-btn {
+        font-size: 24px;
+        padding: 14px 28px;
+      }
+
+      footer {
+        font-size: 16px;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="left">JUIT</div>
-    <div class="center">Timetable</div>
-    <div class="right">
-      <a href="https://github.com/Ashish150523" target="_blank">
-        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
-      </a>
-      <img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" alt="Toggle Theme" onclick="toggleTheme()">
-    </div>
-  </header>
+  <div id="time-display"></div>
 
   <div class="overlay">
-    <div class="meal-box">
-      <h2>Breakfast</h2>
-      <ul>
-        <li>Poha / Upma</li>
-        <li>Boiled Egg / Bread Butter</li>
-        <li>Tea / Coffee</li>
-      </ul>
-    </div>
+    <h1>JUIT FOOD<br>TIMETABLE</h1>
+    <div class="subtitle">Annapurna</div>
+    <div id="date-display"></div>
 
-    <div class="meal-box">
-      <h2>Lunch</h2>
-      <ul>
-        <li>Rice / Roti</li>
-        <li>Dal / Seasonal Veg</li>
-        <li>Salad / Papad</li>
-      </ul>
-    </div>
-
-    <div class="meal-box">
-      <h2>Dinner</h2>
-      <ul>
-        <li>Paneer Curry / Mixed Veg</li>
-        <li>Rice / Chapati</li>
-        <li>Sweet Dish</li>
-      </ul>
-    </div>
+    <a href="days.html">
+      <button class="show-timetable-btn">Show Time Table</button>
+    </a>
   </div>
 
   <footer>
@@ -184,9 +184,36 @@
   </footer>
 
   <script>
-    function toggleTheme() {
-      document.body.classList.toggle("dark-theme");
+    function updateDateTime() {
+      const dateElement = document.getElementById("date-display");
+      const timeElement = document.getElementById("time-display");
+
+      const now = new Date();
+
+      const options = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        timeZone: 'Asia/Kolkata'
+      };
+      const timeOptions = {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        timeZone: 'Asia/Kolkata',
+        hour12: true
+      };
+
+      const indianDate = new Intl.DateTimeFormat('en-IN', options).format(now);
+      const indianTime = new Intl.DateTimeFormat('en-IN', timeOptions).format(now);
+
+      dateElement.textContent = indianDate;
+      timeElement.textContent = indianTime;
     }
+
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
   </script>
 
 </body>
