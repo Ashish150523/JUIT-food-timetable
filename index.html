@@ -13,25 +13,14 @@
 
     body, html {
       height: 100vh;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      background: url('https://images.unsplash.com/photo-1606788075762-18d6bd8d9d25?auto=format&fit=crop&w=1170&q=80') no-repeat center center fixed;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: url("Screenshot 2025-07-21 093650.png") no-repeat center center fixed;
       background-size: cover;
-      overflow: hidden;
+      color: #006400;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       position: relative;
-    }
-
-    .juit-logo {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      width: 60px;
-      height: 60px;
-    }
-
-    .juit-logo img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
     }
 
     .overlay {
@@ -47,89 +36,158 @@
       top: -20px;
     }
 
-    .overlay h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-      color: #2e8b57;
-    }
-
-    .overlay p {
-      font-size: 1.5em;
-      margin-bottom: 20px;
-    }
-
-    .date-box {
-      font-size: 1.2em;
-      margin-bottom: 30px;
+    h1 {
+      font-size: 10vw;
       font-weight: bold;
+      line-height: 1.2;
+      text-shadow: 1px 1px 2px #f1ead1;
+      transition: color 0.3s ease, transform 0.3s ease;
     }
 
-    .btn {
-      padding: 12px 25px;
-      font-size: 1em;
-      color: #fff;
-      background-color: #2e8b57;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background-color 0.3s;
+    h1:hover {
+      color: #228B22;
+      transform: scale(1.05);
     }
 
-    .btn:hover {
+    .subtitle {
+      font-size: 6vw;
+      font-family: 'Brush Script MT', cursive;
+      margin-top: 10px;
+      text-shadow: 1px 1px 2px #f1ead1;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .subtitle:hover {
+      color: #2e8b57;
+      transform: scale(1.05);
+    }
+
+    #date-display {
+      font-size: 4vw;
+      margin-top: 10px;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-weight: 600;
+      color: #006400;
+      text-shadow: 1px 1px 1px #f1ead1;
+    }
+
+    .show-timetable-btn {
+      margin-top: 20px;
       background-color: #006400;
+      color: white;
+      font-size: 20px;
+      padding: 14px 24px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .show-timetable-btn:hover {
+      background-color: #004d00;
+      transform: scale(1.05);
     }
 
     footer {
-      position: absolute;
-      bottom: 10px;
-      width: 100%;
+      background-color: rgba(241, 234, 209, 0.8);
+      padding: 20px;
       text-align: center;
-      font-size: 0.9em;
-      color: #ffffff;
-      text-shadow: 1px 1px 3px #000;
+      font-weight: bold;
+      color: #333;
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
     }
 
-    @media (max-width: 600px) {
-      .overlay h1 {
-        font-size: 2em;
+    footer img {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+
+    .contact-icons {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 60px;
       }
 
-      .overlay p {
-        font-size: 1.2em;
+      .subtitle {
+        font-size: 30px;
       }
 
-      .btn {
-        padding: 10px 20px;
-        font-size: 0.9em;
+      #date-display {
+        font-size: 20px;
+      }
+
+      .overlay {
+        padding: 60px 80px;
+        max-width: 600px;
+      }
+
+      .show-timetable-btn {
+        font-size: 24px;
+        padding: 14px 28px;
+      }
+
+      footer {
+        font-size: 16px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- JUIT Logo (relative path) -->
-  <div class="juit-logo">
-    <a href="https://www.juit.ac.in/hss_workshop/University.php" target="_blank">
-      <img src="Time table food/19698365.png" alt="JUIT Logo" />
+  <div class="overlay">
+    <h1>JUIT FOOD<br>TIMETABLE</h1>
+    <div class="subtitle">Annapurna</div>
+    <div id="date-display"></div>
+
+    <a href="days.html">
+      <button class="show-timetable-btn">Show Time Table</button>
     </a>
   </div>
 
-  <!-- Main Content -->
-  <div class="overlay">
-    <h1>JUIT FOOD TIMETABLE</h1>
-    <p>Annapurna</p>
-    <div class="date-box" id="date"></div>
-    <a href="week.html" class="btn">View Weekly Menu</a>
-  </div>
-
-  <footer>&copy; 2025 JUIT. All Rights Reserved.</footer>
+  <footer>
+    <div>This website is created and managed by <strong>Ashish Tiwari</strong></div>
+    <div>All rights reserved © 2025</div>
+    <div>This website is dedicated to the students of Jaypee University, Solan, Himachal Pradesh</div>
+    <div>If you face any bugs or glitches, report at:</div>
+    <div class="contact-icons">
+      <a href="https://github.com/Ashish150523" target="_blank">
+        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
+      </a>
+      <a href="https://www.linkedin.com/in/ashish-tiwari-69177731a/" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+      </a>
+    </div>
+  </footer>
 
   <script>
-    const dateBox = document.getElementById('date');
-    const today = new Date();
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    dateBox.innerHTML = today.toLocaleDateString('en-US', options);
+    function updateDate() {
+      const dateElement = document.getElementById("date-display");
+      const now = new Date();
+      const options = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        timeZone: 'Asia/Kolkata'
+      };
+      const indianDate = new Intl.DateTimeFormat('en-IN', options).format(now);
+      dateElement.textContent = indianDate;
+    }
+
+    updateDate();
   </script>
+
 </body>
 </html>
